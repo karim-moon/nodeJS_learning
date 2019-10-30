@@ -33,4 +33,91 @@ process.argv.forEach(function(element,index){
     console.log(index + ':',element);
 });
 
+//변수형
 
+//진릿값
+var BOOL = true
+console.log(BOOL);
+//Dictionary 형식
+var BOOL2 = new Boolean(true);
+console.log(BOOL2);
+
+//Number
+var age = 0;
+console.log(age);
+
+//string
+var name = '신문종';
+console.log(name);
+
+//Property
+var Person = {}; // 빈 객체 할당
+
+Person.age = 20;//속성에 값 할당
+Person.name = '신문종';
+Person['mobile'] = '010-2536-7500';
+
+//출력
+console.log('나이:%d', Person.age);
+console.log('이름:%s',Person.name);
+console.log('핸드폰 번호:%s',Person.mobile);
+
+console.log(Person); //JSON형식으로 출력
+
+
+var foo = 20;
+
+var Me = {};
+
+Me.age = foo;
+
+console.log(Me.age);
+
+foo = 24;
+
+console.log(foo)
+console.log(Me.age);
+
+//함수도 속성으로 할당
+Person.add = function add(a,b) {
+                return a+b;
+                };
+
+
+console.log(Person.add(10,15));
+
+
+//함수를 객체에 할당한 뒤 속성으로 부여
+var div = function di(a, b){
+            return a/b;
+            };
+
+Person.divide = div;
+
+console.log(Person.divide(10,5));
+
+//JSON형식으로 객체에 속성 부여 JSON:javascript object notation
+
+var People = {
+    '신문종' :{                                //JSON에 JSON을 속성으로 부여
+        'age': 26,
+        'name' : '신문종',
+        'major' : 'Electrical Engineering'
+    },
+    '이용현': {
+        'age' : 25,
+        'name' : '이용현',
+        'major' : 'CS'
+    },
+
+    'add' : function(a,b){                   //JSON 형식에 함수를 속성으로 부여
+        return a + b;
+    }
+};
+
+console.log(People.신문종.age); // 속성 이름에 한글 입력 가능
+
+console.log(People.add(People.신문종.age, People.이용현.age)); //속성 age에 들어있는 값 호출
+
+
+//배열
