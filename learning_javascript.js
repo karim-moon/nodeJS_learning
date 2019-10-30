@@ -121,3 +121,16 @@ console.log(People.add(People.신문종.age, People.이용현.age)); //속성 ag
 
 
 //배열
+var coffee = [];//배열 기본 구조
+
+var Users = [{name : '신문종', age : 26, major : 'Electrical Egineering'},{name : '이용현', age : 25, major : 'CS'}];
+console.log(Users.length); // 배열 갯수 확인
+console.log('첫번째 사용자 이름 : %s', Users[0].name); //인덱스 포워딩
+
+
+Users.push({name : '황인준', age : 28, major : 'Germanlanguage'});
+console.log(Users[2]); //마지막 인덱스 다음으로 밀어넣기
+
+Users.pop()
+console.log(Users) // 마지막 인덱스 제거
+
