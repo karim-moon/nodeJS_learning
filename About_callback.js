@@ -3,8 +3,8 @@
             -> 함수를 호출할 떄 다른 함수를 파라미터로 전달하거나 함수 안에서 또 다른 함수를 만들어 반환할 수 있다.*/
 //For 비동기 프로그래밍
 
-function add (a, b){
-    return a+b;
+function add (a, b, callback){
+    var result = a + b;
     callback(result);
 }
 
