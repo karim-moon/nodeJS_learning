@@ -134,3 +134,54 @@ console.log(Users[2]); //마지막 인덱스 다음으로 밀어넣기
 Users.pop()
 console.log(Users) // 마지막 인덱스 제거
 
+//배열에 함수 밀어넣기
+
+Users.push(
+    function(a,b){
+        return a + b;
+    }
+)
+
+console.log(Users[2](10,45)); // 인덱스로 호출하여 함수 실행 가능
+
+Users.unshift({name : '나용성', age : 28, major : 'German languae'})// unshift로 배열 앞에 속성할당
+
+for(var i = 0; i < Users.length; i++){
+    console.log('배열 속성' + i + ':' + Users[i].name);
+}
+//forEach 매소드 사용 -> 함수를 파라미터로 전달
+Users.forEach(function (item,index) {
+    console.log('배열요소#' + index + ': %s',item.name)
+})
+
+
+Users.shift();//배열 앞의 요소 삭제
+console.log(Users[0]);//신문종 출력
+
+var Users2 = [{name : '신문종', age : 26, major :'Electrical Engineering'}, {name : '이용현', age : 26, major : 'CS'}, {name : '황인준', age : 28, major : 'German'}];
+
+
+//splice 배열 요소 삭제
+
+//삭제전 출력
+for(var i=0; i < Users2.length; i++){
+    console.log(Users2[i].name);
+}
+
+//obj.splice(index, 갯수,추가할 obj)
+
+Users2.splice(1,2);
+console.log(Users2) //1번인덱스부터 차례로 지워짐
+
+//splice로 배열에 요소 추가, 삭제
+Users2.splice(0,0,{name : '최영재', age : 27, major : 'GL'})
+console.log(Users2)
+
+//slice로 복사 obj.slice(시작 위치,끝 위치)
+var Users2 = [{name : '신문종', age : 26, major :'Electrical Engineering'}, {name : '이용현', age : 26, major : 'CS'}, {name : '황인준', age : 28, major : 'German'}];
+
+console.log('배열의 수 : %d', Users2.length)
+
+var sliceUser1 = Users.slice(0,2);
+console.log('배열의 수 : %d \n', sliceUser1.length, sliceUser1)
+
